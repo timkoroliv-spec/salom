@@ -2,12 +2,14 @@ import asyncio, logging
 from aiogram import Bot, Dispatcher
 from config.settings import token
 from handlers.start import rt as start
+from handlers.mashina import rt as mashinalar
 dp = Dispatcher()
 
 async def main():
     bot = Bot(token)
 
     dp.include_router(start)
+    dp.include_router(mashinalar)
 
     await dp.start_polling(bot)
 
